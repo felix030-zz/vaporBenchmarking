@@ -1,17 +1,28 @@
 import Vapor
 
 extension Droplet {
+    
+    func getJSON() -> [String: Int] {
+        var rndJSON = [String: Int]()
+        
+        for i in 1...1000 {
+            let randomNumber = Int(arc4random_uniform(UInt32(10)))
+            rndJSON["Index \(i)"] = randomNumber
+        }
+        return rndJSON
+    }
+    
     func setupRoutes() throws {
-        get("hello") { req in
+       
+        //json route
+        get("json") { req in
             var json = JSON()
-            try json.set("hello", "world")
+            for (element, number) in self.getJSON() {
+                try json.set(element, number)
+            }
             return json
         }
-
-        get("plaintext") { req in
-            return "Hello, world!"
-        }
-
+        
         // response to requests to /info domain
         // with a description of the request
         get("info") { req in
