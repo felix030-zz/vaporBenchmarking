@@ -15,13 +15,18 @@ extension Droplet {
     func setupRoutes() throws {
        
         //json route
-        get("json") { req in
+        get("jsonVapor") { req in
             var json = JSON()
             for (element, number) in self.getJSON() {
                 try json.set(element, number)
             }
             return json
         }
+        
+        get("plaintextVapor") { req in
+            return "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+        }
+        
         
         // response to requests to /info domain
         // with a description of the request
