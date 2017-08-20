@@ -20,6 +20,11 @@ let config = try Config()
 try config.setup()
 
 let drop = try Droplet(config)
+
+drop.get("htmlVapor") { reg in
+    return try drop.view.make("page.leaf")
+    
+}
 try drop.setup()
 
 try drop.run()
