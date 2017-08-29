@@ -24,13 +24,10 @@ extension Droplet {
         }
         
         get("jsonShortVapor") { req in
-            
-            let jsonDic: [String: Int] = [
-                "Vapor":941,
-                "Kitura":1337,
-                "Perfect":42]
-         
-            
+            var json = JSON()
+            try json.set("Vapor", 941)
+            try json.set("Kitura", 1337)
+            try json.set("Perfect", 42)
             return json
         }
         

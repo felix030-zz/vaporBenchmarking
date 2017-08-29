@@ -22,9 +22,15 @@ try config.setup()
 let drop = try Droplet(config)
 
 drop.get("htmlVapor") { reg in
-    return try drop.view.make("page.leaf")
+    return try drop.view.make("htmlVapor.leaf")
     
 }
+
+drop.get("htmlLargeVapor") { reg in
+    return try drop.view.make("htmlLargeVapor.leaf")
+    
+}
+
 try drop.setup()
 
 try drop.run()
