@@ -23,6 +23,19 @@ extension Droplet {
             return json
         }
         
+        get("jsonShortVapor") { req in
+            
+            let jsonDic: [String: Int] = [
+                "Vapor":941,
+                "Kitura":1337,
+                "Perfect":42]
+         
+            
+            return json
+        }
+        
+        
+        
         get("plaintextVapor") { req in
             return "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
         }
