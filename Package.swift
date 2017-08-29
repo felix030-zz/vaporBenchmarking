@@ -1,7 +1,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "vaporJSONBenchmarking",
+    name: "vaporBenchmarking",
     targets: [
         Target(name: "App"),
         Target(name: "Run", dependencies: ["App"]),
